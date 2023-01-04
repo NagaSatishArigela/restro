@@ -1,20 +1,23 @@
-import {useState} from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import Dashboard from "../../pages/Dashboard";
+import PageRoutes from "../../routes";
 import Header from "../header/header";
 
 export default function Sidebar() {
-    const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(true);
   const Menus = [
-    { title: "Dashboard", src: "Chart_fill", link: "/" },
-    { title: "Inbox", src: "Chat", link: <Header/> },
-    { title: "Accounts", src: "User", gap: true },
-    { title: "Schedule ", src: "Calendar" },
-    { title: "Search", src: "Search" },
-    { title: "Analytics", src: "Chart" },
-    { title: "Files ", src: "Folder", gap: true },
-    { title: "Setting", src: "Setting" },
+    { title: "Dashboard", src: "Chart_fill", route: "/" },
+    { title: "Inbox", src: "Chat", route: "/messages" },
+    { title: "Accounts", src: "User", gap: true, route: "/contacts" },
+    { title: "Reservation ", src: "Calendar", route: "/reservations" },
+    // { title: "Search", src: "Search" },
+    { title: "Analytics", src: "Chart", route: "/reports" },
+    // { title: "Files ", src: "Folder", gap: true },
+    { title: "Setting", src: "Setting", route: "/settings" },
   ];
-    return (
-        <div className="flex">
+  return (
+    <div className="flex">
       <div
         className={` ${
           open ? "w-72" : "w-20 "
@@ -43,25 +46,28 @@ export default function Sidebar() {
         </div>
         <ul className="pt-6">
           {Menus.map((Menu, index) => (
-            <li
-              key={index}
-              className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
+            <Link to={Menu.route} key={index}>
+              <li
+                key={index}
+                className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
               ${Menu.gap ? "mt-9" : "mt-2"} ${
-                index === 0 && "bg-light-white"
-              } `}
-              link="/"
-            >
-              <img src={`./src/assets/${Menu.src}.png`} />
-              <span className={`${!open && "hidden"} origin-left duration-200`}>
-                {Menu.title}
-              </span>
-            </li>
+                  index === 0 && "bg-light-white"
+                } `}
+              >
+                <img src={`./src/assets/${Menu.src}.png`} />
+                <span
+                  className={`${!open && "hidden"} origin-left duration-200`}
+                >
+                  {Menu.title}
+                </span>
+              </li>
+            </Link>
           ))}
         </ul>
       </div>
       <div className="h-screen flex-1 p-7">
-        <h1 className="text-2xl font-semibold ">Home Page</h1>
+      <PageRoutes/>
       </div>
     </div>
-    );
+  );
 }
