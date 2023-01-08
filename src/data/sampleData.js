@@ -6,7 +6,8 @@ const data = [
         "phone": "7720038405",
         "altPhone": "1334947505",
         "billingPeriod": 1,
-        "status": "pending"
+        "status": "pending",
+        "img": "https://flowbite.com/docs/images/people/profile-picture-5.jpg"
 	},
     {
 		"firstName": "Vamsi",
@@ -15,7 +16,8 @@ const data = [
         "phone": "7120038405",
         "altPhone": "1234947505",
         "billingPeriod": 30,
-        "status": "paid"
+        "status": "paid",
+        "img": "https://flowbite.com/docs/images/people/profile-picture-2.jpg"
 	},
     {
 		"firstName": "varma",
@@ -24,7 +26,8 @@ const data = [
         "phone": "7722038405",
         "altPhone": "1534947505",
         "billingPeriod": 1,
-        "status": "pending"
+        "status": "pending",
+        "img": "https://flowbite.com/docs/images/people/profile-picture-1.jpg"
 	}
 ]
 
