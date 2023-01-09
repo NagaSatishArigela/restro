@@ -1,7 +1,5 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./components/layout";
-import Sidebar from "./components/sidebar/sidebar";
 import Contacts from "./pages/contacts";
 import Dashboard from "./pages/Dashboard";
 import Inbox from "./pages/inbox";
@@ -13,7 +11,6 @@ import Settings from "./pages/settings";
 function PageRoutes() {
   return (
     <>
-    <Layout/>
       <Routes>
         <Route path="/" exact element={<Dashboard />} />
         <Route path="/messages" exact element={<Inbox />} />
