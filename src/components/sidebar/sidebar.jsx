@@ -6,6 +6,7 @@ import Header from "../header/header";
 
 export default function Sidebar() {
   const [open, setOpen] = useState(true);
+  const [active, setActive] = useState(0);
   const Menus = [
     { title: "Dashboard", src: "Chart_fill", route: "/" },
     { title: "Inbox", src: "Chat", route: "/messages" },
@@ -51,8 +52,9 @@ export default function Sidebar() {
                 key={index}
                 className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
               ${Menu.gap ? "mt-9" : "mt-2"} ${
-                  index === 0 && "bg-light-white"
+                  index === active && "bg-light-white"
                 } `}
+                onClick={() => setActive(index)}
               >
                 <img src={`./src/assets/${Menu.src}.png`} />
                 <span

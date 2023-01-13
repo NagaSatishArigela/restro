@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import Layout from "../components/layout";
+import SignIn from "../components/signIn/signIn";
+import data from "../data/sampleData";
 
 const Dashboard = () => {
   return (
-    <div className='text-lg'>dashboard</div>
-  )
-}
+    <>
+    <Layout/> 
+    </>
+  );
+};
 
-export default Dashboard
+export default Dashboard;
